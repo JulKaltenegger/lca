@@ -1,0 +1,869 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.7), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "prefixList" : {
+      "owl" : "http://www.w3.org/2002/07/owl#",
+      "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "xsd" : "http://www.w3.org/2001/XMLSchema#",
+      "" : "https://w3id.org/lca#",
+      "xml" : "http://www.w3.org/XML/1998/namespace",
+      "rdfs" : "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "title" : {
+      "undefined" : "Life Cycle Assessment Ontology for building material performance"
+    },
+    "iri" : "https://w3id.org/lca#",
+    "author" : [ "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger" ],
+    "description" : {
+      "undefined" : "The Life Cycle Assessment ontology assignes Life Cycle Inventories to construction materials. The Life Cycle Inventory is discussed and outlines the required input and output for Life Cycle Assessment calculations."
+    },
+    "other" : {
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger",
+        "type" : "iri"
+      } ],
+      "contributor" : [ {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Martin_Röck",
+        "type" : "iri"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "Life Cycle Assessment Ontology for building material performance",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "33",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "39",
+    "type" : "owl:Class"
+  }, {
+    "id" : "29",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "40",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "58",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "54",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "59",
+    "type" : "owl:Class"
+  }, {
+    "id" : "60",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "68",
+    "type" : "owl:Class"
+  }, {
+    "id" : "46",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "62",
+    "type" : "owl:Class"
+  }, {
+    "id" : "53",
+    "type" : "owl:Class"
+  }, {
+    "id" : "55",
+    "type" : "owl:Class"
+  }, {
+    "id" : "57",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "56",
+    "type" : "owl:Class"
+  }, {
+    "id" : "51",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ActivityType"
+    },
+    "subClasses" : [ "4", "5", "6", "7", "8", "9" ],
+    "attributes" : [ "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LUTSOM"
+    },
+    "attributes" : [ "external" ],
+    "id" : "10",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Material",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Material"
+    },
+    "attributes" : [ "external" ],
+    "id" : "15"
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A5",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "A5"
+    },
+    "attributes" : [ "external" ],
+    "id" : "16",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A4",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "A4"
+    },
+    "attributes" : [ "external" ],
+    "id" : "17",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A3",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "A3"
+    },
+    "attributes" : [ "external" ],
+    "id" : "18",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A2",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "A2"
+    },
+    "attributes" : [ "external" ],
+    "id" : "19",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A1",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "A1"
+    },
+    "attributes" : [ "external" ],
+    "id" : "20",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LUOBIO"
+    },
+    "attributes" : [ "external" ],
+    "id" : "33",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Process",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Process"
+    },
+    "attributes" : [ "external" ],
+    "id" : "9",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B7",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "B7"
+    },
+    "attributes" : [ "external" ],
+    "id" : "36",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B6",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "B6"
+    },
+    "attributes" : [ "external" ],
+    "id" : "39",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B5",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "B5"
+    },
+    "attributes" : [ "external" ],
+    "id" : "29",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B4",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "B4"
+    },
+    "attributes" : [ "external" ],
+    "id" : "27",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B3",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "B3"
+    },
+    "attributes" : [ "external" ],
+    "id" : "31",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B2",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "B2"
+    },
+    "attributes" : [ "external" ],
+    "id" : "1",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B1",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "B1"
+    },
+    "attributes" : [ "external" ],
+    "id" : "40",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EnvironmentalIndicator"
+    },
+    "subClasses" : [ "53", "54", "55", "56", "57", "10", "33", "51", "46" ],
+    "comment" : {
+      "undefined" : "Describes environmental and economic indicators following ISO 11620"
+    },
+    "attributes" : [ "external" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialIn",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MaterialIn"
+    },
+    "attributes" : [ "external" ],
+    "id" : "6",
+    "superClasses" : [ "3" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "4", "5", "6", "7", "8", "9" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "25"
+  }, {
+    "instances" : 0,
+    "union" : [ "36", "39", "16", "29", "17", "27", "18", "31", "19", "22", "20", "59", "1", "60", "40", "61", "62" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "58"
+  }, {
+    "instances" : 0,
+    "union" : [ "53", "54", "55", "56", "57", "10", "51", "33", "46" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "13"
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialLoss",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MaterialLoss"
+    },
+    "attributes" : [ "external" ],
+    "id" : "7",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportEoL",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TransportEoL"
+    },
+    "attributes" : [ "external" ],
+    "id" : "4",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialOut",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MaterialOut"
+    },
+    "attributes" : [ "external" ],
+    "id" : "5",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DARF"
+    },
+    "attributes" : [ "external" ],
+    "id" : "54",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C4",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "C4"
+    },
+    "attributes" : [ "external" ],
+    "id" : "22",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C3",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "C3"
+    },
+    "attributes" : [ "external" ],
+    "id" : "59",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C2",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "C2"
+    },
+    "attributes" : [ "external" ],
+    "id" : "60",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C1",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "C1"
+    },
+    "attributes" : [ "external" ],
+    "id" : "61",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "14",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "53", "54", "55", "56", "57", "10", "33", "51", "46" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "68"
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LUOFOR"
+    },
+    "attributes" : [ "external" ],
+    "id" : "46",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportToSite",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TransportToSite"
+    },
+    "attributes" : [ "external" ],
+    "id" : "8",
+    "superClasses" : [ "3" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/D",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "D"
+    },
+    "attributes" : [ "external" ],
+    "id" : "62",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LUOAGR"
+    },
+    "attributes" : [ "external" ],
+    "id" : "53",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LUOSOM"
+    },
+    "attributes" : [ "external" ],
+    "id" : "55",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PM"
+    },
+    "attributes" : [ "external" ],
+    "id" : "57",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LifeCycleStage"
+    },
+    "subClasses" : [ "36", "16", "39", "17", "29", "27", "18", "31", "19", "22", "1", "20", "59", "40", "60", "61", "62" ],
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ECOFW"
+    },
+    "attributes" : [ "external" ],
+    "id" : "56",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "GWP"
+    },
+    "attributes" : [ "external" ],
+    "id" : "51",
+    "superClasses" : [ "11" ]
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "12",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "21",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "23",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "24",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "26",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "28",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "30",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "32",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "41",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "43",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "45",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "47",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "48",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "49",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "50",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "52",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "63",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "64",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "65",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "66",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "67",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "69",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "70",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "71",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "72",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "73",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "74",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "75",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "76",
+    "type" : "rdfs:SubClassOf"
+  } ],
+  "propertyAttribute" : [ {
+    "range" : "2",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "hasValue"
+    },
+    "domain" : "13",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "12"
+  }, {
+    "range" : "2",
+    "domain" : "22",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "21"
+  }, {
+    "range" : "2",
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "23"
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "hasActivityType"
+    },
+    "domain" : "15",
+    "attributes" : [ "object", "external" ],
+    "id" : "24"
+  }, {
+    "range" : "2",
+    "domain" : "27",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "26"
+  }, {
+    "range" : "2",
+    "domain" : "29",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "28"
+  }, {
+    "range" : "2",
+    "domain" : "31",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "30"
+  }, {
+    "range" : "2",
+    "domain" : "18",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "32"
+  }, {
+    "range" : "2",
+    "domain" : "16",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "34"
+  }, {
+    "range" : "2",
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "35"
+  }, {
+    "range" : "2",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "37"
+  }, {
+    "range" : "2",
+    "domain" : "39",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "38"
+  }, {
+    "range" : "3",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "41"
+  }, {
+    "range" : "3",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "42"
+  }, {
+    "range" : "3",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "43"
+  }, {
+    "range" : "3",
+    "domain" : "4",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "44"
+  }, {
+    "range" : "11",
+    "domain" : "46",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "45"
+  }, {
+    "range" : "3",
+    "domain" : "6",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "47"
+  }, {
+    "range" : "3",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "48"
+  }, {
+    "range" : "11",
+    "domain" : "10",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "49"
+  }, {
+    "range" : "11",
+    "domain" : "51",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "50"
+  }, {
+    "range" : "11",
+    "domain" : "33",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "52"
+  }, {
+    "range" : "11",
+    "domain" : "53",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "63"
+  }, {
+    "range" : "11",
+    "domain" : "54",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "64"
+  }, {
+    "range" : "11",
+    "domain" : "55",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "65"
+  }, {
+    "range" : "11",
+    "domain" : "56",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "66"
+  }, {
+    "range" : "11",
+    "domain" : "57",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "67"
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "range" : "68",
+    "label" : {
+      "IRI-based" : "hasEnvironmentalIndicator"
+    },
+    "domain" : "15",
+    "attributes" : [ "object", "external" ],
+    "id" : "69"
+  }, {
+    "range" : "2",
+    "domain" : "62",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "70"
+  }, {
+    "range" : "2",
+    "domain" : "61",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "71"
+  }, {
+    "range" : "2",
+    "domain" : "59",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "72"
+  }, {
+    "iri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage",
+    "baseIri" : "http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42",
+    "range" : "58",
+    "label" : {
+      "IRI-based" : "hasLifeCycleStage"
+    },
+    "domain" : "15",
+    "attributes" : [ "object", "external" ],
+    "id" : "73"
+  }, {
+    "range" : "2",
+    "domain" : "20",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "74"
+  }, {
+    "range" : "2",
+    "domain" : "60",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "75"
+  }, {
+    "range" : "2",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "76"
+  } ]
+}
