@@ -1,0 +1,13 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix : <> .
+<..\index-en.html> a prov:Entity;
+	 dc:title "Life Cycle Assessment Ontology for building material performance";
+	 prov:wasAttributedTo <http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger>;
+	 dc:creator <http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger>;
+	 prov:wasAttributedTo <http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Martin_Röck>;
+	 dc:contributor <http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Martin_Röck>;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:specializationOf <https://w3id.org/lca#>;
+.

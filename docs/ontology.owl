@@ -1,0 +1,538 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/lca#"
+     xml:base="https://w3id.org/lca"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:untitled-ontology-42="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#">
+    <owl:Ontology rdf:about="https://w3id.org/lca#">
+        <terms:contributor rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Martin_Röck"/>
+        <terms:creator rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger"/>
+        <terms:description>The Life Cycle Assessment ontology assignes Life Cycle Inventories to construction materials. The Life Cycle Inventory is discussed and outlines the required input and output for Life Cycle Assessment calculations.</terms:description>
+        <terms:title>Life Cycle Assessment Ontology for building material performance</terms:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#preferredNamespace -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#preferredNamespace"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Material"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialIn"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialLoss"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialOut"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Process"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportEoL"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportToSite"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Material"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Material"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A1"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A2"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A3"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A4"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A5"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B1"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B2"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B3"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B4"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B5"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B6"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B7"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C1"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C2"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C3"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C4"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/D"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A1 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A1">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A2 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A3 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A3">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A4 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A5 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A5">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType"/>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B1 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B1">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B2 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B3 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B3">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B4 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B5 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B5">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B6 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B6">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B7 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B7">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C1 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C1">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C2 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C3 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C3">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C4 -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C4">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/D -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/D">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator">
+        <rdfs:comment>Describes environmental and economic indicators following ISO 11620</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage"/>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Material -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Material"/>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialIn -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialIn">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialLoss -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialLoss">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialOut -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialOut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Process -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportEoL -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportEoL">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportToSite -->
+
+
+    <owl:Class rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportToSite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger">
+        <rdfs:label>Julia Kaltenegger</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Martin_Röck -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Martin_Röck">
+        <rdfs:label>Martin Röck</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Material -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Material"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
