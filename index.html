@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<!-- <link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/> -->
+<!-- <link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/> -->
+<link rel="stylesheet" href="resources/light.css">
+
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<!-- <meta name="color-scheme" content="dark light"> -->
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+
+ <title>Life Cycle Assessment Ontology for building material performance</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/lca#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/lca#","name":"Life Cycle Assessment Ontology for building material performance", "headline":"Document describing the ontology https://w3id.org/lca#", "dateReleased":"Mon Apr 20 16:23:16 CEST 2026", "author":[{"@type":"Person","name":"Julia Kaltenegger","url":"http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger"}], "contributor":[{"@type":"Person","name":"Martin Röck","url":"http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Martin_Röck"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Life Cycle Assessment Ontology for building material performance</h1>
+
+
+<dl>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/lca#">https://w3id.org/lca#</a></dd>
+<dt>Authors:</dt>
+<dd><a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger">Julia Kaltenegger</a></dd>
+
+<dt>Contributors:</dt>
+<dd><a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Martin_Röck">Martin Röck</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.example.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.example.org" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Julia Kaltenegger. Life Cycle Assessment Ontology for building material performance.</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><!DOCTYPE html>
+<html>
+<head>
+  <title>LCAOntology</title>
+</head>
+
+<body>
+
+<section id="abstract">
+  <h1>Abstract</h1>
+  <p>
+The Life Cycle Assessment ontology assignes Life Cycle Inventories to construction materials. The Life Cycle Inventory is discussed and outlines the required input and output for Life Cycle Assessment calculations.
+<section id="introduction">
+  <h1>Introduction</h1>
+
+  <p>
+The Life Cycle Assessment ontology assignes Life Cycle Inventories to construction materials. The Life Cycle Inventory is discussed and outlines the required input and output for Life Cycle Assessment calculations.  <h2>Namespace Declarations</h2>
+
+  <table>
+    <tr>
+      <th>Prefix</th>
+      <th>Namespace</th>
+    </tr>
+    <tr>
+      <td><code>lca</code></td>
+      <td><a href="https://w3id.org/lca#">https://w3id.org/lca#</a></td>
+    </tr>
+  </table>
+
+  <h2>Overview Diagram</h2>
+
+<img src="images/LCACoreOnt.png" alt="LCA Ontology Diagram"  style="display:block; margin:auto; max-width:80%; height:auto;">
+
+</section>
+
+
+</body>
+</html></div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;https://w3id.org/at#&gt;</td></tr>
+<tr><td><b>at</b></td><td>&lt;https://w3id.org/lca&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
+<tr><td><b>untitled-ontology-42</b></td><td>&lt;http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/&gt;</td></tr>
+<tr><td><b>untitled-ontology-421</b></td><td>&lt;http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Life Cycle Assessment Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A1"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A1">
+         <span>A1</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A2"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A2">
+         <span>A2</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A3"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A3">
+         <span>A3</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A4"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A4">
+         <span>A4</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A5"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A5">
+         <span>A5</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B1"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B1">
+         <span>B1</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B2"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B2">
+         <span>B2</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B3"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B3">
+         <span>B3</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B4"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B4">
+         <span>B4</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B5"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B5">
+         <span>B5</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B6"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B6">
+         <span>B6</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B7"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B7">
+         <span>B7</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C1"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C1">
+         <span>C1</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C2"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C2">
+         <span>C2</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C3"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C3">
+         <span>C3</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C4"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C4">
+         <span>C4</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/D"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/D">
+         <span>D</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF">
+         <span>D A R F</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW">
+         <span>E C O F W</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator">
+         <span>Environmental Indicator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP">
+         <span>G W P</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR">
+         <span>L U O A G R</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO">
+         <span>L U O B I O</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR">
+         <span>L U O F O R</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM">
+         <span>L U O S O M</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM">
+         <span>L U T S O M</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialIn"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialIn">
+         <span>Material In</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialLoss"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialLoss">
+         <span>Material Loss</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialOut"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialOut">
+         <span>Material Out</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM">
+         <span>P M</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Process"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Process">
+         <span>Process</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportEoL"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportEoL">
+         <span>Transport Eo L</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportToSite"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportToSite">
+         <span>Transport To Site</span>
+      </a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType">
+         <span>has Activity Type</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator">
+         <span>has Environmental Indicator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">
+         <span>has Life Cycle Stage</span>
+      </a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue">
+         <span>has Value</span>
+      </a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor">
+         <span>contributor</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">
+         <span>description</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#preferredNamespace"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#preferredNamespace">
+         <span>preferred Namespace</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">
+         <span>title</span>
+      </a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger">Julia Kaltenegger</a>
+   </li>
+   <li>
+      <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Martin_Röck"
+         title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Martin_Röck">Martin Röck</a>
+   </li>
+ <iframe src="webvowl/index.html" width="100%" height="600"></iframe>
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Life Cycle Assessment Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">The Life Cycle Assessment ontology assignes Life Cycle Inventories to construction materials. The Life Cycle Inventory is discussed and outlines the required input and output for Life Cycle Assessment calculations.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Life Cycle Assessment Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Life Cycle Assessment Ontology.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A1" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A1"> <span>A1</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A2" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A2"> <span>A2</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A3" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A3"> <span>A3</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A4" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A4"> <span>A4</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A5" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A5"> <span>A5</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B1" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B1"> <span>B1</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B2" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B2"> <span>B2</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B3" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B3"> <span>B3</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B4" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B4"> <span>B4</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B5" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B5"> <span>B5</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B6" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B6"> <span>B6</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B7" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B7"> <span>B7</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C1" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C1"> <span>C1</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C2" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C2"> <span>C2</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C3" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C3"> <span>C3</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C4" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C4"> <span>C4</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/D" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/D"> <span>D</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF"> <span>D A R F</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW"> <span>E C O F W</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator"> <span>Environmental Indicator</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP"> <span>G W P</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR"> <span>L U O A G R</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO"> <span>L U O B I O</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR"> <span>L U O F O R</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM"> <span>L U O S O M</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM"> <span>L U T S O M</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialIn" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialIn"> <span>Material In</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialLoss" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialLoss"> <span>Material Loss</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialOut" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialOut"> <span>Material Out</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM"> <span>P M</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Process" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Process"> <span>Process</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportEoL" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportEoL"> <span>Transport Eo L</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportToSite" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportToSite"> <span>Transport To Site</span> </a></li>
+ </ul>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A1">
+  <h3>A1<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A1</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A2">
+  <h3>A2<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A2</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A3">
+  <h3>A3<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A3</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A4">
+  <h3>A4<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A4</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A5">
+  <h3>A5<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A5</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B1">
+  <h3>B1<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B1</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B2">
+  <h3>B2<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B2</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B3">
+  <h3>B3<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B3</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B4">
+  <h3>B4<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B4</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B5">
+  <h3>B5<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B5</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B6">
+  <h3>B6<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B6</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B7">
+  <h3>B7<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B7</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C1">
+  <h3>C1<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C1</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C2">
+  <h3>C2<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C2</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C3">
+  <h3>C3<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C3</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C4">
+  <h3>C4<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C4</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/D">
+  <h3>D<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/D</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LifeCycleStage">Life Cycle Stage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">has Life Cycle Stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF">
+  <h3>D A R F<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator">Environmental Indicator</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue">has Value</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator">has Environmental Indicator</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW">
+  <h3>E C O F W<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator">Environmental Indicator</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue">has Value</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator">has Environmental Indicator</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator">
+  <h3>Environmental Indicator<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator</p>
+  <div class="comment">
+   <span class="markdown">Describes environmental and economic indicators following ISO 11620</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF">D A R F</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW">E C O F W</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP">G W P</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR">L U O A G R</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO">L U O B I O</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR">L U O F O R</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM">L U O S O M</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM">L U T S O M</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM">P M</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP">
+  <h3>G W P<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator">Environmental Indicator</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue">has Value</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator">has Environmental Indicator</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR">
+  <h3>L U O A G R<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator">Environmental Indicator</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue">has Value</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator">has Environmental Indicator</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO">
+  <h3>L U O B I O<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator">Environmental Indicator</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue">has Value</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator">has Environmental Indicator</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR">
+  <h3>L U O F O R<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator">Environmental Indicator</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue">has Value</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator">has Environmental Indicator</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM">
+  <h3>L U O S O M<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator">Environmental Indicator</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue">has Value</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator">has Environmental Indicator</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM">
+  <h3>L U T S O M<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator">Environmental Indicator</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue">has Value</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator">has Environmental Indicator</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialIn">
+  <h3>Material In<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialIn</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType">Activity Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType">has Activity Type</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialLoss">
+  <h3>Material Loss<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialLoss</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType">Activity Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType">has Activity Type</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialOut">
+  <h3>Material Out<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialOut</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType">Activity Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType">has Activity Type</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM">
+  <h3>P M<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/EnvironmentalIndicator">Environmental Indicator</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue">has Value</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator">has Environmental Indicator</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Process">
+  <h3>Process<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Process</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType">Activity Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType">has Activity Type</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportEoL">
+  <h3>Transport Eo L<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportEoL</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType">Activity Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType">has Activity Type</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportToSite">
+  <h3>Transport To Site<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportToSite</p>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ActivityType">Activity Type</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType">has Activity Type</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType"> <span>has Activity Type</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator"> <span>has Environmental Indicator</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage"> <span>has Life Cycle Stage</span> </a></li>
+ </ul>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType">
+  <h3>has Activity Type<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasActivityType</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Material" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Material">Material</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialIn" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialIn">Material In</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialLoss" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialLoss">Material Loss</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialOut" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/MaterialOut">Material Out</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Process" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Process">Process</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportEoL" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportEoL">Transport Eo L</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportToSite" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/TransportToSite">Transport To Site</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator">
+  <h3>has Environmental Indicator<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasEnvironmentalIndicator</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Material" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Material">Material</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF">D A R F</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW">E C O F W</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP">G W P</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR">L U O A G R</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO">L U O B I O</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR">L U O F O R</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM">L U O S O M</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM">L U T S O M</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM">P M</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage">
+  <h3>has Life Cycle Stage<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasLifeCycleStage</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Material" target="_blank" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/Material">Material</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A1" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A1">A1</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A2" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A2">A2</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A3" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A3">A3</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A4" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A4">A4</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A5" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/A5">A5</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B1" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B1">B1</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B2" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B2">B2</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B3" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B3">B3</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B4" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B4">B4</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B5" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B5">B5</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B6" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B6">B6</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B7" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/B7">B7</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C1" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C1">C1</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C2" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C2">C2</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C3" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C3">C3</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C4" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/C4">C4</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/D" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/D">D</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue"> <span>has Value</span> </a></li>
+ </ul>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue">
+  <h3>has Value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/hasValue</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/DARF">D A R F</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/ECOFW">E C O F W</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/GWP">G W P</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOAGR">L U O A G R</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOBIO">L U O B I O</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOFOR">L U O F O R</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUOSOM">L U O S O M</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/LUTSOM">L U T S O M</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dd>
+     <a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42/PM">P M</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/dc/terms/contributor" title="http://purl.org/dc/terms/contributor"> <span>contributor</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator"> <span>creator</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description"> <span>description</span> </a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#preferredNamespace" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#preferredNamespace"> <span>preferred Namespace</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title"> <span>title</span> </a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/dc/terms/contributor">
+  <h3>contributor<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/contributor</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/creator">
+  <h3>creator<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/description">
+  <h3>description<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/description</p>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#preferredNamespace">
+  <h3>preferred Namespace<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#preferredNamespace</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/title">
+  <h3>title<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/title</p>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger">Julia Kaltenegger</a></li>
+  <li><a href="#http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Martin_Röck" title="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Martin_Röck">Martin Röck</a></li>
+ </ul>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger">
+  <h3>Julia Kaltenegger<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Julia_Kaltenegger</p>
+ </div>
+ <div class="entity" id="http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Martin_Röck">
+  <h3>Martin Röck<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.semanticweb.org/20180031/ontologies/2026/3/untitled-ontology-42#Martin_Röck</p>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
