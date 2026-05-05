@@ -1,0 +1,443 @@
+[ {
+  "@id" : "http://purl.org/dc/terms/contributor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://w3id.org/at#Material",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/lca#Material"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/contributor" : [ {
+    "@id" : "https://w3id.org/lca#Martin_Röck"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@id" : "https://w3id.org/lca#Julia_Kaltenegger"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "The Life Cycle Assessment ontology assignes Life Cycle Inventories to construction materials. The Life Cycle Inventory is discussed and outlines the required input and output for Life Cycle Assessment calculations. Calculation Base relies on DIN EN 15978."
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@value" : "Life Cycle Assessment Ontology for building material performance"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "1.0"
+  } ],
+  "https://w3id.org/lca#:preferredNamespacePrefix" : [ {
+    "@value" : "lca"
+  } ],
+  "https://w3id.org/lca#preferredNamespaceUri" : [ {
+    "@value" : "https://w3id.org/lca#"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#:preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://w3id.org/lca#A1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#A2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#A3",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#A4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#A5",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#ADPE",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Abiotic Depletion Potential for Elements (ADPE)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#EnvironmentalIndicator"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#ADPF",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Abiotic Depletion Potential of fossil Fuels (ADPF)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#EnvironmentalIndicator"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#AP",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Acidification Potential (AP)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#EnvironmentalIndicator"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#ActivityType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/lca#Aim",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Life-cycle oriented building planning"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#B1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#B2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#B3",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#B4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#B5",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#B6",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#B7",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#C1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#C2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#C3",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#C4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#D",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#LifeCycleStage"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#EP",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Eutrophication Potential (EP)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#EnvironmentalIndicator"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#EnvironmentalIndicator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Describes environmental and economic indicators following ISO 11620"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#FunctionalEquivalent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Description of the building with regard to its material and time-dependent properties"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#GWP",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Global Warming Potential (GWP)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#EnvironmentalIndicator"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#Julia_Kaltenegger",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Julia Kaltenegger"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#LifeCycleStage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/lca#Martin_Röck",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Martin Röck"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#Material",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://w3id.org/lca#MaterialIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#ActivityType"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#MaterialLoss",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#ActivityType"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#MaterialOut",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#ActivityType"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#ODP",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Ozone Depletion Potential (ODP)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#EnvironmentalIndicator"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#PEGES",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Total primary energy demand (PEges)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#EnvironmentalIndicator"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#PENE",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Non-renewable primary energy demand (PEne)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#EnvironmentalIndicator"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#POCP",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Photochemical Ozone Creation Potential (POCP)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#EnvironmentalIndicator"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#Process",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#ActivityType"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#ReferenceStudyPeriod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "50 years for office building;\n100 years for residential building;"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#SystemBoundary",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Entire buildings, without: -outdoor facilities -selected technical equipment"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#TransportEoL",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#ActivityType"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#TransportToSite",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#ActivityType"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#WF",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Water consumption (WF)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/lca#EnvironmentalIndicator"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#hasActivityType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/lca#Material"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/lca#MaterialIn"
+  }, {
+    "@id" : "https://w3id.org/lca#MaterialLoss"
+  }, {
+    "@id" : "https://w3id.org/lca#MaterialOut"
+  }, {
+    "@id" : "https://w3id.org/lca#Process"
+  }, {
+    "@id" : "https://w3id.org/lca#TransportEoL"
+  }, {
+    "@id" : "https://w3id.org/lca#TransportToSite"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#hasEnvironmentalIndicator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/lca#Material"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/lca#ADPE"
+  }, {
+    "@id" : "https://w3id.org/lca#ADPF"
+  }, {
+    "@id" : "https://w3id.org/lca#AP"
+  }, {
+    "@id" : "https://w3id.org/lca#EP"
+  }, {
+    "@id" : "https://w3id.org/lca#GWP"
+  }, {
+    "@id" : "https://w3id.org/lca#ODP"
+  }, {
+    "@id" : "https://w3id.org/lca#PEGES"
+  }, {
+    "@id" : "https://w3id.org/lca#PENE"
+  }, {
+    "@id" : "https://w3id.org/lca#POCP"
+  }, {
+    "@id" : "https://w3id.org/lca#WF"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#hasLifeCycleStage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/lca#Material"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/lca#A1"
+  }, {
+    "@id" : "https://w3id.org/lca#A2"
+  }, {
+    "@id" : "https://w3id.org/lca#A3"
+  }, {
+    "@id" : "https://w3id.org/lca#A4"
+  }, {
+    "@id" : "https://w3id.org/lca#A5"
+  }, {
+    "@id" : "https://w3id.org/lca#B1"
+  }, {
+    "@id" : "https://w3id.org/lca#B2"
+  }, {
+    "@id" : "https://w3id.org/lca#B3"
+  }, {
+    "@id" : "https://w3id.org/lca#B4"
+  }, {
+    "@id" : "https://w3id.org/lca#B5"
+  }, {
+    "@id" : "https://w3id.org/lca#B6"
+  }, {
+    "@id" : "https://w3id.org/lca#B7"
+  }, {
+    "@id" : "https://w3id.org/lca#C1"
+  }, {
+    "@id" : "https://w3id.org/lca#C2"
+  }, {
+    "@id" : "https://w3id.org/lca#C3"
+  }, {
+    "@id" : "https://w3id.org/lca#C4"
+  }, {
+    "@id" : "https://w3id.org/lca#D"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#hasValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/lca#ADPE"
+  }, {
+    "@id" : "https://w3id.org/lca#ADPF"
+  }, {
+    "@id" : "https://w3id.org/lca#AP"
+  }, {
+    "@id" : "https://w3id.org/lca#EP"
+  }, {
+    "@id" : "https://w3id.org/lca#GWP"
+  }, {
+    "@id" : "https://w3id.org/lca#ODP"
+  }, {
+    "@id" : "https://w3id.org/lca#PEGES"
+  }, {
+    "@id" : "https://w3id.org/lca#PENE"
+  }, {
+    "@id" : "https://w3id.org/lca#POCP"
+  }, {
+    "@id" : "https://w3id.org/lca#WF"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+  } ]
+}, {
+  "@id" : "https://w3id.org/lca#preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+} ]

@@ -1,0 +1,314 @@
+<https://w3id.org/lca#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/lca#> <http://purl.org/dc/terms/contributor> <https://w3id.org/lca#Martin_Röck> .
+<https://w3id.org/lca#> <http://purl.org/dc/terms/creator> <https://w3id.org/lca#Julia_Kaltenegger> .
+<https://w3id.org/lca#> <http://purl.org/dc/terms/description> "The Life Cycle Assessment ontology assignes Life Cycle Inventories to construction materials. The Life Cycle Inventory is discussed and outlines the required input and output for Life Cycle Assessment calculations. Calculation Base relies on DIN EN 15978." .
+<https://w3id.org/lca#> <http://purl.org/dc/terms/title> "Life Cycle Assessment Ontology for building material performance" .
+<https://w3id.org/lca#> <http://www.w3.org/2002/07/owl#versionInfo> "1.0"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/lca#> <https://w3id.org/lca#preferredNamespaceUri> "https://w3id.org/lca#" .
+<https://w3id.org/lca#> <https://w3id.org/lca#:preferredNamespacePrefix> "lca" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/lca#preferredNamespaceUri
+<https://w3id.org/lca#preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/lca#:preferredNamespacePrefix
+<https://w3id.org/lca#:preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/lca#hasActivityType
+<https://w3id.org/lca#hasActivityType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/lca#hasActivityType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/lca#Material> .
+<https://w3id.org/lca#hasActivityType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#MaterialIn> .
+<https://w3id.org/lca#hasActivityType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#MaterialLoss> .
+<https://w3id.org/lca#hasActivityType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#MaterialOut> .
+<https://w3id.org/lca#hasActivityType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#Process> .
+<https://w3id.org/lca#hasActivityType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#TransportEoL> .
+<https://w3id.org/lca#hasActivityType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#TransportToSite> .
+# 
+# https://w3id.org/lca#hasEnvironmentalIndicator
+<https://w3id.org/lca#hasEnvironmentalIndicator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/lca#hasEnvironmentalIndicator> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/lca#Material> .
+<https://w3id.org/lca#hasEnvironmentalIndicator> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#ADPE> .
+<https://w3id.org/lca#hasEnvironmentalIndicator> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#ADPF> .
+<https://w3id.org/lca#hasEnvironmentalIndicator> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#AP> .
+<https://w3id.org/lca#hasEnvironmentalIndicator> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#EP> .
+<https://w3id.org/lca#hasEnvironmentalIndicator> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#GWP> .
+<https://w3id.org/lca#hasEnvironmentalIndicator> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#ODP> .
+<https://w3id.org/lca#hasEnvironmentalIndicator> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#PEGES> .
+<https://w3id.org/lca#hasEnvironmentalIndicator> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#PENE> .
+<https://w3id.org/lca#hasEnvironmentalIndicator> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#POCP> .
+<https://w3id.org/lca#hasEnvironmentalIndicator> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#WF> .
+# 
+# https://w3id.org/lca#hasLifeCycleStage
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/lca#Material> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#A1> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#A2> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#A3> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#A4> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#A5> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#B1> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#B2> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#B3> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#B4> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#B5> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#B6> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#B7> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#C1> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#C2> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#C3> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#C4> .
+<https://w3id.org/lca#hasLifeCycleStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/lca#D> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/lca#hasValue
+<https://w3id.org/lca#hasValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/lca#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/lca#ADPE> .
+<https://w3id.org/lca#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/lca#ADPF> .
+<https://w3id.org/lca#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/lca#AP> .
+<https://w3id.org/lca#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/lca#EP> .
+<https://w3id.org/lca#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/lca#GWP> .
+<https://w3id.org/lca#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/lca#ODP> .
+<https://w3id.org/lca#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/lca#PEGES> .
+<https://w3id.org/lca#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/lca#PENE> .
+<https://w3id.org/lca#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/lca#POCP> .
+<https://w3id.org/lca#hasValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/lca#WF> .
+<https://w3id.org/lca#hasValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/lca#A1
+<https://w3id.org/lca#A1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#A1> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#A2
+<https://w3id.org/lca#A2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#A2> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#A3
+<https://w3id.org/lca#A3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#A3> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#A4
+<https://w3id.org/lca#A4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#A4> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#A5
+<https://w3id.org/lca#A5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#A5> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#ADPE
+<https://w3id.org/lca#ADPE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#ADPE> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#EnvironmentalIndicator> .
+<https://w3id.org/lca#ADPE> <http://www.w3.org/2000/01/rdf-schema#comment> "Abiotic Depletion Potential for Elements (ADPE)" .
+# 
+# https://w3id.org/lca#ADPF
+<https://w3id.org/lca#ADPF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#ADPF> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#EnvironmentalIndicator> .
+<https://w3id.org/lca#ADPF> <http://www.w3.org/2000/01/rdf-schema#comment> "Abiotic Depletion Potential of fossil Fuels (ADPF)" .
+# 
+# https://w3id.org/lca#AP
+<https://w3id.org/lca#AP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#AP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#EnvironmentalIndicator> .
+<https://w3id.org/lca#AP> <http://www.w3.org/2000/01/rdf-schema#comment> "Acidification Potential (AP)" .
+# 
+# https://w3id.org/lca#ActivityType
+<https://w3id.org/lca#ActivityType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/lca#Aim
+<https://w3id.org/lca#Aim> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#Aim> <http://www.w3.org/2000/01/rdf-schema#comment> "Life-cycle oriented building planning" .
+# 
+# https://w3id.org/lca#B1
+<https://w3id.org/lca#B1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#B1> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#B2
+<https://w3id.org/lca#B2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#B2> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#B3
+<https://w3id.org/lca#B3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#B3> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#B4
+<https://w3id.org/lca#B4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#B4> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#B5
+<https://w3id.org/lca#B5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#B5> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#B6
+<https://w3id.org/lca#B6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#B6> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#B7
+<https://w3id.org/lca#B7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#B7> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#C1
+<https://w3id.org/lca#C1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#C1> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#C2
+<https://w3id.org/lca#C2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#C2> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#C3
+<https://w3id.org/lca#C3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#C3> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#C4
+<https://w3id.org/lca#C4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#C4> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#D
+<https://w3id.org/lca#D> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#D> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#LifeCycleStage> .
+# 
+# https://w3id.org/lca#EP
+<https://w3id.org/lca#EP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#EP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#EnvironmentalIndicator> .
+<https://w3id.org/lca#EP> <http://www.w3.org/2000/01/rdf-schema#comment> "Eutrophication Potential (EP)" .
+# 
+# https://w3id.org/lca#EnvironmentalIndicator
+<https://w3id.org/lca#EnvironmentalIndicator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#EnvironmentalIndicator> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes environmental and economic indicators following ISO 11620" .
+# 
+# https://w3id.org/lca#FunctionalEquivalent
+<https://w3id.org/lca#FunctionalEquivalent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#FunctionalEquivalent> <http://www.w3.org/2000/01/rdf-schema#comment> "Description of the building with regard to its material and time-dependent properties" .
+# 
+# https://w3id.org/lca#GWP
+<https://w3id.org/lca#GWP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#GWP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#EnvironmentalIndicator> .
+<https://w3id.org/lca#GWP> <http://www.w3.org/2000/01/rdf-schema#comment> "Global Warming Potential (GWP)" .
+# 
+# https://w3id.org/lca#LifeCycleStage
+<https://w3id.org/lca#LifeCycleStage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/lca#Material
+<https://w3id.org/lca#Material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/lca#MaterialIn
+<https://w3id.org/lca#MaterialIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#MaterialIn> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#ActivityType> .
+# 
+# https://w3id.org/lca#MaterialLoss
+<https://w3id.org/lca#MaterialLoss> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#MaterialLoss> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#ActivityType> .
+# 
+# https://w3id.org/lca#MaterialOut
+<https://w3id.org/lca#MaterialOut> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#MaterialOut> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#ActivityType> .
+# 
+# https://w3id.org/lca#ODP
+<https://w3id.org/lca#ODP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#ODP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#EnvironmentalIndicator> .
+<https://w3id.org/lca#ODP> <http://www.w3.org/2000/01/rdf-schema#comment> "Ozone Depletion Potential (ODP)" .
+# 
+# https://w3id.org/lca#PEGES
+<https://w3id.org/lca#PEGES> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#PEGES> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#EnvironmentalIndicator> .
+<https://w3id.org/lca#PEGES> <http://www.w3.org/2000/01/rdf-schema#comment> "Total primary energy demand (PEges)" .
+# 
+# https://w3id.org/lca#PENE
+<https://w3id.org/lca#PENE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#PENE> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#EnvironmentalIndicator> .
+<https://w3id.org/lca#PENE> <http://www.w3.org/2000/01/rdf-schema#comment> "Non-renewable primary energy demand (PEne)" .
+# 
+# https://w3id.org/lca#POCP
+<https://w3id.org/lca#POCP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#POCP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#EnvironmentalIndicator> .
+<https://w3id.org/lca#POCP> <http://www.w3.org/2000/01/rdf-schema#comment> "Photochemical Ozone Creation Potential (POCP)" .
+# 
+# https://w3id.org/lca#Process
+<https://w3id.org/lca#Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#ActivityType> .
+# 
+# https://w3id.org/lca#ReferenceStudyPeriod
+<https://w3id.org/lca#ReferenceStudyPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#ReferenceStudyPeriod> <http://www.w3.org/2000/01/rdf-schema#comment> "50 years for office building;\n100 years for residential building;" .
+# 
+# https://w3id.org/lca#SystemBoundary
+<https://w3id.org/lca#SystemBoundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#SystemBoundary> <http://www.w3.org/2000/01/rdf-schema#comment> "Entire buildings, without: -outdoor facilities -selected technical equipment" .
+# 
+# https://w3id.org/lca#TransportEoL
+<https://w3id.org/lca#TransportEoL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#TransportEoL> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#ActivityType> .
+# 
+# https://w3id.org/lca#TransportToSite
+<https://w3id.org/lca#TransportToSite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#TransportToSite> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#ActivityType> .
+# 
+# https://w3id.org/lca#WF
+<https://w3id.org/lca#WF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/lca#WF> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/lca#EnvironmentalIndicator> .
+<https://w3id.org/lca#WF> <http://www.w3.org/2000/01/rdf-schema#comment> "Water consumption (WF)" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/at#Material
+<https://w3id.org/at#Material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/at#Material> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/lca#Material> .
+# 
+# https://w3id.org/lca#Julia_Kaltenegger
+<https://w3id.org/lca#Julia_Kaltenegger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/lca#Julia_Kaltenegger> <http://www.w3.org/2000/01/rdf-schema#label> "Julia Kaltenegger" .
+# 
+# https://w3id.org/lca#Martin_Röck
+<https://w3id.org/lca#Martin_Röck> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/lca#Martin_Röck> <http://www.w3.org/2000/01/rdf-schema#label> "Martin Röck" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

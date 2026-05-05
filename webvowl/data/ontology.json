@@ -1,0 +1,965 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.7), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "https://w3id.org/lca", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "prefixList" : {
+      "owl" : "http://www.w3.org/2002/07/owl#",
+      "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "xsd" : "http://www.w3.org/2001/XMLSchema#",
+      "" : "https://w3id.org/lca#",
+      "xml" : "http://www.w3.org/XML/1998/namespace",
+      "rdfs" : "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "title" : {
+      "undefined" : "Life Cycle Assessment Ontology for building material performance"
+    },
+    "iri" : "https://w3id.org/lca#",
+    "version" : "1.0",
+    "author" : [ "https://w3id.org/lca#Julia_Kaltenegger" ],
+    "description" : {
+      "undefined" : "The Life Cycle Assessment ontology assignes Life Cycle Inventories to construction materials. The Life Cycle Inventory is discussed and outlines the required input and output for Life Cycle Assessment calculations. Calculation Base relies on DIN EN 15978."
+    },
+    "other" : {
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "https://w3id.org/lca#Julia_Kaltenegger",
+        "type" : "iri"
+      } ],
+      "contributor" : [ {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "https://w3id.org/lca#Martin_Röck",
+        "type" : "iri"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "lca",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/lca#",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "undefined",
+        "value" : "Life Cycle Assessment Ontology for building material performance",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "38",
+    "type" : "owl:Class"
+  }, {
+    "id" : "42",
+    "type" : "owl:Class"
+  }, {
+    "id" : "33",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "45",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "49",
+    "type" : "owl:Class"
+  }, {
+    "id" : "56",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "58",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "40",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "63",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "owl:Class"
+  }, {
+    "id" : "51",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "62",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "74",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "64",
+    "type" : "owl:Class"
+  }, {
+    "id" : "66",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "68",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "54",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "29",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "65",
+    "type" : "owl:Class"
+  }, {
+    "id" : "67",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/lca#MaterialLoss",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MaterialLoss"
+    },
+    "id" : "3",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://w3id.org/lca#FunctionalEquivalent",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FunctionalEquivalent"
+    },
+    "comment" : {
+      "undefined" : "Description of the building with regard to its material and time-dependent properties"
+    },
+    "id" : "5"
+  }, {
+    "iri" : "https://w3id.org/lca#MaterialOut",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MaterialOut"
+    },
+    "id" : "6",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://w3id.org/lca#GWP",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "GWP"
+    },
+    "comment" : {
+      "undefined" : "Global Warming Potential (GWP)"
+    },
+    "id" : "7",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/lca#EnvironmentalIndicator",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EnvironmentalIndicator"
+    },
+    "subClasses" : [ "9", "10", "11", "12", "13", "14", "15", "7", "16", "17" ],
+    "comment" : {
+      "undefined" : "Describes environmental and economic indicators following ISO 11620"
+    },
+    "id" : "8"
+  }, {
+    "iri" : "https://w3id.org/lca#MaterialIn",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MaterialIn"
+    },
+    "id" : "34",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://w3id.org/lca#B7",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "B7"
+    },
+    "id" : "31",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#B6",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "B6"
+    },
+    "id" : "38",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#SystemBoundary",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SystemBoundary"
+    },
+    "comment" : {
+      "undefined" : "Entire buildings, without: -outdoor facilities -selected technical equipment"
+    },
+    "id" : "42"
+  }, {
+    "iri" : "https://w3id.org/lca#TransportEoL",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TransportEoL"
+    },
+    "id" : "33",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://w3id.org/lca#POCP",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "POCP"
+    },
+    "comment" : {
+      "undefined" : "Photochemical Ozone Creation Potential (POCP)"
+    },
+    "id" : "15",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/lca#D",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "D"
+    },
+    "id" : "25",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#TransportToSite",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TransportToSite"
+    },
+    "id" : "45",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://w3id.org/lca#C4",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "C4"
+    },
+    "id" : "27",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#C3",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "C3"
+    },
+    "id" : "1",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#ReferenceStudyPeriod",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ReferenceStudyPeriod"
+    },
+    "comment" : {
+      "undefined" : "50 years for office building;\n100 years for residential building;"
+    },
+    "id" : "49"
+  }, {
+    "iri" : "https://w3id.org/lca#C2",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "C2"
+    },
+    "id" : "56",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#WF",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WF"
+    },
+    "comment" : {
+      "undefined" : "Water consumption (WF)"
+    },
+    "id" : "17",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/lca#C1",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "C1"
+    },
+    "id" : "58",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#ODP",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ODP"
+    },
+    "comment" : {
+      "undefined" : "Ozone Depletion Potential (ODP)"
+    },
+    "id" : "10",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/lca#Material",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Material"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/at#Material",
+      "baseIri" : "https://w3id.org/at",
+      "labels" : {
+        "IRI-based" : "Material"
+      }
+    } ],
+    "id" : "40"
+  }, {
+    "iri" : "https://w3id.org/lca#PEGES",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PEGES"
+    },
+    "comment" : {
+      "undefined" : "Total primary energy demand (PEges)"
+    },
+    "id" : "12",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/lca#A5",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "A5"
+    },
+    "id" : "36",
+    "superClasses" : [ "2" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "54", "3", "45", "6", "34", "33" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "63"
+  }, {
+    "instances" : 0,
+    "union" : [ "31", "38", "36", "25", "23", "29", "27", "1", "19", "21", "64", "65", "66", "67", "56", "68", "58" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "41"
+  }, {
+    "instances" : 0,
+    "union" : [ "9", "10", "12", "11", "13", "15", "14", "7", "17", "16" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "51"
+  }, {
+    "iri" : "https://w3id.org/lca#EP",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EP"
+    },
+    "comment" : {
+      "undefined" : "Eutrophication Potential (EP)"
+    },
+    "id" : "13",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/lca#ActivityType",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ActivityType"
+    },
+    "subClasses" : [ "54", "3", "45", "6", "34", "33" ],
+    "id" : "4"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "62",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://w3id.org/lca#Aim",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Aim"
+    },
+    "comment" : {
+      "undefined" : "Life-cycle oriented building planning"
+    },
+    "id" : "74"
+  }, {
+    "instances" : 0,
+    "union" : [ "10", "9", "11", "12", "13", "14", "15", "7", "17", "16" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "61"
+  }, {
+    "iri" : "https://w3id.org/lca#B3",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "B3"
+    },
+    "id" : "23",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#B2",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "B2"
+    },
+    "id" : "21",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#B5",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "B5"
+    },
+    "id" : "64",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#B4",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "B4"
+    },
+    "id" : "66",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#AP",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AP"
+    },
+    "comment" : {
+      "undefined" : "Acidification Potential (AP)"
+    },
+    "id" : "16",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/lca#B1",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "B1"
+    },
+    "id" : "68",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#ADPE",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ADPE"
+    },
+    "comment" : {
+      "undefined" : "Abiotic Depletion Potential for Elements (ADPE)"
+    },
+    "id" : "9",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/lca#ADPF",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ADPF"
+    },
+    "comment" : {
+      "undefined" : "Abiotic Depletion Potential of fossil Fuels (ADPF)"
+    },
+    "id" : "11",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/lca#LifeCycleStage",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LifeCycleStage"
+    },
+    "subClasses" : [ "31", "38", "36", "25", "23", "29", "27", "21", "19", "1", "64", "65", "66", "67", "68", "56", "58" ],
+    "id" : "2"
+  }, {
+    "iri" : "https://w3id.org/lca#Process",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Process"
+    },
+    "id" : "54",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "https://w3id.org/lca#PENE",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PENE"
+    },
+    "comment" : {
+      "undefined" : "Non-renewable primary energy demand (PEne)"
+    },
+    "id" : "14",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "https://w3id.org/lca#A2",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "A2"
+    },
+    "id" : "29",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#A1",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "A1"
+    },
+    "id" : "19",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#A4",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "A4"
+    },
+    "id" : "65",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/lca#A3",
+    "baseIri" : "https://w3id.org/lca",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "A3"
+    },
+    "id" : "67",
+    "superClasses" : [ "2" ]
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "18",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "20",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "22",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "24",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "26",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "28",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "30",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "32",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "39",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "43",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "46",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "47",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "48",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "52",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "53",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "57",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "59",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "60",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "69",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "70",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "71",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "72",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "73",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "75",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "76",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "77",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "78",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "79",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "80",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "81",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "82",
+    "type" : "rdfs:SubClassOf"
+  } ],
+  "propertyAttribute" : [ {
+    "range" : "2",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "0"
+  }, {
+    "range" : "2",
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "18"
+  }, {
+    "range" : "2",
+    "domain" : "21",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "20"
+  }, {
+    "range" : "2",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "22"
+  }, {
+    "range" : "2",
+    "domain" : "25",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "24"
+  }, {
+    "range" : "2",
+    "domain" : "27",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "26"
+  }, {
+    "range" : "2",
+    "domain" : "29",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "28"
+  }, {
+    "range" : "2",
+    "domain" : "31",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "30"
+  }, {
+    "range" : "4",
+    "domain" : "33",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "32"
+  }, {
+    "range" : "2",
+    "domain" : "36",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "35"
+  }, {
+    "range" : "2",
+    "domain" : "38",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "37"
+  }, {
+    "iri" : "https://w3id.org/lca#hasLifeCycleStage",
+    "baseIri" : "https://w3id.org/lca",
+    "range" : "41",
+    "label" : {
+      "IRI-based" : "hasLifeCycleStage"
+    },
+    "domain" : "40",
+    "attributes" : [ "object" ],
+    "id" : "39"
+  }, {
+    "range" : "4",
+    "domain" : "6",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "43"
+  }, {
+    "range" : "4",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "44"
+  }, {
+    "range" : "4",
+    "domain" : "34",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "46"
+  }, {
+    "range" : "8",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "47"
+  }, {
+    "range" : "8",
+    "domain" : "16",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "48"
+  }, {
+    "iri" : "https://w3id.org/lca#hasEnvironmentalIndicator",
+    "baseIri" : "https://w3id.org/lca",
+    "range" : "51",
+    "label" : {
+      "IRI-based" : "hasEnvironmentalIndicator"
+    },
+    "domain" : "40",
+    "attributes" : [ "object" ],
+    "id" : "50"
+  }, {
+    "range" : "4",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "52"
+  }, {
+    "range" : "4",
+    "domain" : "54",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "53"
+  }, {
+    "range" : "8",
+    "domain" : "14",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "55"
+  }, {
+    "range" : "8",
+    "domain" : "7",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "57"
+  }, {
+    "range" : "8",
+    "domain" : "15",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "59"
+  }, {
+    "iri" : "https://w3id.org/lca#hasValue",
+    "baseIri" : "https://w3id.org/lca",
+    "range" : "62",
+    "label" : {
+      "IRI-based" : "hasValue"
+    },
+    "domain" : "61",
+    "attributes" : [ "datatype" ],
+    "id" : "60"
+  }, {
+    "range" : "8",
+    "domain" : "9",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "69"
+  }, {
+    "range" : "8",
+    "domain" : "10",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "70"
+  }, {
+    "range" : "8",
+    "domain" : "11",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "71"
+  }, {
+    "range" : "8",
+    "domain" : "12",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "72"
+  }, {
+    "range" : "8",
+    "domain" : "13",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "73"
+  }, {
+    "iri" : "https://w3id.org/lca#hasActivityType",
+    "baseIri" : "https://w3id.org/lca",
+    "range" : "63",
+    "label" : {
+      "IRI-based" : "hasActivityType"
+    },
+    "domain" : "40",
+    "attributes" : [ "object" ],
+    "id" : "75"
+  }, {
+    "range" : "2",
+    "domain" : "56",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "76"
+  }, {
+    "range" : "2",
+    "domain" : "68",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "77"
+  }, {
+    "range" : "2",
+    "domain" : "58",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "78"
+  }, {
+    "range" : "2",
+    "domain" : "65",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "79"
+  }, {
+    "range" : "2",
+    "domain" : "64",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "80"
+  }, {
+    "range" : "2",
+    "domain" : "67",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "81"
+  }, {
+    "range" : "2",
+    "domain" : "66",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "82"
+  } ]
+}

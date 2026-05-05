@@ -1,0 +1,353 @@
+@prefix : <https://w3id.org/lca#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/lca#> .
+
+<https://w3id.org/lca#> rdf:type owl:Ontology ;
+                         <http://purl.org/dc/terms/contributor> :Martin_Röck ;
+                         <http://purl.org/dc/terms/creator> :Julia_Kaltenegger ;
+                         <http://purl.org/dc/terms/description> "The Life Cycle Assessment ontology assignes Life Cycle Inventories to construction materials. The Life Cycle Inventory is discussed and outlines the required input and output for Life Cycle Assessment calculations. Calculation Base relies on DIN EN 15978." ;
+                         <http://purl.org/dc/terms/title> "Life Cycle Assessment Ontology for building material performance" ;
+                         owl:versionInfo 1.0 ;
+                         :preferredNamespaceUri "https://w3id.org/lca#" ;
+                         <https://w3id.org/lca#:preferredNamespacePrefix> "lca" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/lca#preferredNamespaceUri
+:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/lca#:preferredNamespacePrefix
+<https://w3id.org/lca#:preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/lca#hasActivityType
+:hasActivityType rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Material ;
+                 rdfs:range :MaterialIn ,
+                            :MaterialLoss ,
+                            :MaterialOut ,
+                            :Process ,
+                            :TransportEoL ,
+                            :TransportToSite .
+
+
+###  https://w3id.org/lca#hasEnvironmentalIndicator
+:hasEnvironmentalIndicator rdf:type owl:ObjectProperty ;
+                           rdfs:domain :Material ;
+                           rdfs:range :ADPE ,
+                                      :ADPF ,
+                                      :AP ,
+                                      :EP ,
+                                      :GWP ,
+                                      :ODP ,
+                                      :PEGES ,
+                                      :PENE ,
+                                      :POCP ,
+                                      :WF .
+
+
+###  https://w3id.org/lca#hasLifeCycleStage
+:hasLifeCycleStage rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Material ;
+                   rdfs:range :A1 ,
+                              :A2 ,
+                              :A3 ,
+                              :A4 ,
+                              :A5 ,
+                              :B1 ,
+                              :B2 ,
+                              :B3 ,
+                              :B4 ,
+                              :B5 ,
+                              :B6 ,
+                              :B7 ,
+                              :C1 ,
+                              :C2 ,
+                              :C3 ,
+                              :C4 ,
+                              :D .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/lca#hasValue
+:hasValue rdf:type owl:DatatypeProperty ;
+          rdfs:domain :ADPE ,
+                      :ADPF ,
+                      :AP ,
+                      :EP ,
+                      :GWP ,
+                      :ODP ,
+                      :PEGES ,
+                      :PENE ,
+                      :POCP ,
+                      :WF ;
+          rdfs:range rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/lca#A1
+:A1 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#A2
+:A2 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#A3
+:A3 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#A4
+:A4 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#A5
+:A5 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#ADPE
+:ADPE rdf:type owl:Class ;
+      rdfs:subClassOf :EnvironmentalIndicator ;
+      rdfs:comment "Abiotic Depletion Potential for Elements (ADPE)" .
+
+
+###  https://w3id.org/lca#ADPF
+:ADPF rdf:type owl:Class ;
+      rdfs:subClassOf :EnvironmentalIndicator ;
+      rdfs:comment "Abiotic Depletion Potential of fossil Fuels (ADPF)" .
+
+
+###  https://w3id.org/lca#AP
+:AP rdf:type owl:Class ;
+    rdfs:subClassOf :EnvironmentalIndicator ;
+    rdfs:comment "Acidification Potential (AP)" .
+
+
+###  https://w3id.org/lca#ActivityType
+:ActivityType rdf:type owl:Class .
+
+
+###  https://w3id.org/lca#Aim
+:Aim rdf:type owl:Class ;
+     rdfs:comment "Life-cycle oriented building planning" .
+
+
+###  https://w3id.org/lca#B1
+:B1 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#B2
+:B2 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#B3
+:B3 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#B4
+:B4 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#B5
+:B5 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#B6
+:B6 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#B7
+:B7 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#C1
+:C1 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#C2
+:C2 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#C3
+:C3 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#C4
+:C4 rdf:type owl:Class ;
+    rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#D
+:D rdf:type owl:Class ;
+   rdfs:subClassOf :LifeCycleStage .
+
+
+###  https://w3id.org/lca#EP
+:EP rdf:type owl:Class ;
+    rdfs:subClassOf :EnvironmentalIndicator ;
+    rdfs:comment "Eutrophication Potential (EP)" .
+
+
+###  https://w3id.org/lca#EnvironmentalIndicator
+:EnvironmentalIndicator rdf:type owl:Class ;
+                        rdfs:comment "Describes environmental and economic indicators following ISO 11620" .
+
+
+###  https://w3id.org/lca#FunctionalEquivalent
+:FunctionalEquivalent rdf:type owl:Class ;
+                      rdfs:comment "Description of the building with regard to its material and time-dependent properties" .
+
+
+###  https://w3id.org/lca#GWP
+:GWP rdf:type owl:Class ;
+     rdfs:subClassOf :EnvironmentalIndicator ;
+     rdfs:comment "Global Warming Potential (GWP)" .
+
+
+###  https://w3id.org/lca#LifeCycleStage
+:LifeCycleStage rdf:type owl:Class .
+
+
+###  https://w3id.org/lca#Material
+:Material rdf:type owl:Class .
+
+
+###  https://w3id.org/lca#MaterialIn
+:MaterialIn rdf:type owl:Class ;
+            rdfs:subClassOf :ActivityType .
+
+
+###  https://w3id.org/lca#MaterialLoss
+:MaterialLoss rdf:type owl:Class ;
+              rdfs:subClassOf :ActivityType .
+
+
+###  https://w3id.org/lca#MaterialOut
+:MaterialOut rdf:type owl:Class ;
+             rdfs:subClassOf :ActivityType .
+
+
+###  https://w3id.org/lca#ODP
+:ODP rdf:type owl:Class ;
+     rdfs:subClassOf :EnvironmentalIndicator ;
+     rdfs:comment "Ozone Depletion Potential (ODP)" .
+
+
+###  https://w3id.org/lca#PEGES
+:PEGES rdf:type owl:Class ;
+       rdfs:subClassOf :EnvironmentalIndicator ;
+       rdfs:comment "Total primary energy demand (PEges)" .
+
+
+###  https://w3id.org/lca#PENE
+:PENE rdf:type owl:Class ;
+      rdfs:subClassOf :EnvironmentalIndicator ;
+      rdfs:comment "Non-renewable primary energy demand (PEne)" .
+
+
+###  https://w3id.org/lca#POCP
+:POCP rdf:type owl:Class ;
+      rdfs:subClassOf :EnvironmentalIndicator ;
+      rdfs:comment "Photochemical Ozone Creation Potential (POCP)" .
+
+
+###  https://w3id.org/lca#Process
+:Process rdf:type owl:Class ;
+         rdfs:subClassOf :ActivityType .
+
+
+###  https://w3id.org/lca#ReferenceStudyPeriod
+:ReferenceStudyPeriod rdf:type owl:Class ;
+                      rdfs:comment """50 years for office building;
+100 years for residential building;""" .
+
+
+###  https://w3id.org/lca#SystemBoundary
+:SystemBoundary rdf:type owl:Class ;
+                rdfs:comment "Entire buildings, without: -outdoor facilities -selected technical equipment" .
+
+
+###  https://w3id.org/lca#TransportEoL
+:TransportEoL rdf:type owl:Class ;
+              rdfs:subClassOf :ActivityType .
+
+
+###  https://w3id.org/lca#TransportToSite
+:TransportToSite rdf:type owl:Class ;
+                 rdfs:subClassOf :ActivityType .
+
+
+###  https://w3id.org/lca#WF
+:WF rdf:type owl:Class ;
+    rdfs:subClassOf :EnvironmentalIndicator ;
+    rdfs:comment "Water consumption (WF)" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/at#Material
+<https://w3id.org/at#Material> rdf:type owl:NamedIndividual ,
+                                        :Material .
+
+
+###  https://w3id.org/lca#Julia_Kaltenegger
+:Julia_Kaltenegger rdf:type owl:NamedIndividual ;
+                   rdfs:label "Julia Kaltenegger" .
+
+
+###  https://w3id.org/lca#Martin_Röck
+:Martin_Röck rdf:type owl:NamedIndividual ;
+             rdfs:label "Martin Röck" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

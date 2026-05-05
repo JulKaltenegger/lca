@@ -1,0 +1,609 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/lca#"
+     xml:base="https://w3id.org/lca"
+     xmlns:lca="https://w3id.org/lca#:"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:lca1="https://w3id.org/lca#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/lca#">
+        <terms:contributor rdf:resource="https://w3id.org/lca#Martin_Röck"/>
+        <terms:creator rdf:resource="https://w3id.org/lca#Julia_Kaltenegger"/>
+        <terms:description>The Life Cycle Assessment ontology assignes Life Cycle Inventories to construction materials. The Life Cycle Inventory is discussed and outlines the required input and output for Life Cycle Assessment calculations. Calculation Base relies on DIN EN 15978.</terms:description>
+        <terms:title>Life Cycle Assessment Ontology for building material performance</terms:title>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
+        <preferredNamespaceUri>https://w3id.org/lca#</preferredNamespaceUri>
+        <lca:preferredNamespacePrefix>lca</lca:preferredNamespacePrefix>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- https://w3id.org/lca#preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/lca#preferredNamespaceUri"/>
+    
+
+
+    <!-- https://w3id.org/lca#:preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/lca#:preferredNamespacePrefix"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/lca#hasActivityType -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/lca#hasActivityType">
+        <rdfs:domain rdf:resource="https://w3id.org/lca#Material"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#MaterialIn"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#MaterialLoss"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#MaterialOut"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#Process"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#TransportEoL"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#TransportToSite"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/lca#hasEnvironmentalIndicator -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/lca#hasEnvironmentalIndicator">
+        <rdfs:domain rdf:resource="https://w3id.org/lca#Material"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#ADPE"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#ADPF"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#AP"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#EP"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#GWP"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#ODP"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#PEGES"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#PENE"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#POCP"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#WF"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/lca#hasLifeCycleStage -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/lca#hasLifeCycleStage">
+        <rdfs:domain rdf:resource="https://w3id.org/lca#Material"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#A1"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#A2"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#A3"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#A4"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#A5"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#B1"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#B2"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#B3"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#B4"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#B5"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#B6"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#B7"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#C1"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#C2"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#C3"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#C4"/>
+        <rdfs:range rdf:resource="https://w3id.org/lca#D"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/lca#hasValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/lca#hasValue">
+        <rdfs:domain rdf:resource="https://w3id.org/lca#ADPE"/>
+        <rdfs:domain rdf:resource="https://w3id.org/lca#ADPF"/>
+        <rdfs:domain rdf:resource="https://w3id.org/lca#AP"/>
+        <rdfs:domain rdf:resource="https://w3id.org/lca#EP"/>
+        <rdfs:domain rdf:resource="https://w3id.org/lca#GWP"/>
+        <rdfs:domain rdf:resource="https://w3id.org/lca#ODP"/>
+        <rdfs:domain rdf:resource="https://w3id.org/lca#PEGES"/>
+        <rdfs:domain rdf:resource="https://w3id.org/lca#PENE"/>
+        <rdfs:domain rdf:resource="https://w3id.org/lca#POCP"/>
+        <rdfs:domain rdf:resource="https://w3id.org/lca#WF"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/lca#A1 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#A1">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#A2 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#A2">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#A3 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#A3">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#A4 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#A4">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#A5 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#A5">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#ADPE -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#ADPE">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#EnvironmentalIndicator"/>
+        <rdfs:comment>Abiotic Depletion Potential for Elements (ADPE)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#ADPF -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#ADPF">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#EnvironmentalIndicator"/>
+        <rdfs:comment>Abiotic Depletion Potential of fossil Fuels (ADPF)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#AP -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#AP">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#EnvironmentalIndicator"/>
+        <rdfs:comment>Acidification Potential (AP)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#ActivityType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#ActivityType"/>
+    
+
+
+    <!-- https://w3id.org/lca#Aim -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#Aim">
+        <rdfs:comment>Life-cycle oriented building planning</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#B1 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#B1">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#B2 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#B2">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#B3 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#B3">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#B4 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#B4">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#B5 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#B5">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#B6 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#B6">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#B7 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#B7">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#C1 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#C1">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#C2 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#C2">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#C3 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#C3">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#C4 -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#C4">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#D -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#D">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#LifeCycleStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#EP -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#EP">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#EnvironmentalIndicator"/>
+        <rdfs:comment>Eutrophication Potential (EP)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#EnvironmentalIndicator -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#EnvironmentalIndicator">
+        <rdfs:comment>Describes environmental and economic indicators following ISO 11620</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#FunctionalEquivalent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#FunctionalEquivalent">
+        <rdfs:comment>Description of the building with regard to its material and time-dependent properties</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#GWP -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#GWP">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#EnvironmentalIndicator"/>
+        <rdfs:comment>Global Warming Potential (GWP)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#LifeCycleStage -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#LifeCycleStage"/>
+    
+
+
+    <!-- https://w3id.org/lca#Material -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#Material"/>
+    
+
+
+    <!-- https://w3id.org/lca#MaterialIn -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#MaterialIn">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#ActivityType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#MaterialLoss -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#MaterialLoss">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#ActivityType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#MaterialOut -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#MaterialOut">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#ActivityType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#ODP -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#ODP">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#EnvironmentalIndicator"/>
+        <rdfs:comment>Ozone Depletion Potential (ODP)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#PEGES -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#PEGES">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#EnvironmentalIndicator"/>
+        <rdfs:comment>Total primary energy demand (PEges)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#PENE -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#PENE">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#EnvironmentalIndicator"/>
+        <rdfs:comment>Non-renewable primary energy demand (PEne)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#POCP -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#POCP">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#EnvironmentalIndicator"/>
+        <rdfs:comment>Photochemical Ozone Creation Potential (POCP)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#Process -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#Process">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#ActivityType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#ReferenceStudyPeriod -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#ReferenceStudyPeriod">
+        <rdfs:comment>50 years for office building;
+100 years for residential building;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#SystemBoundary -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#SystemBoundary">
+        <rdfs:comment>Entire buildings, without: -outdoor facilities -selected technical equipment</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#TransportEoL -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#TransportEoL">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#ActivityType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#TransportToSite -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#TransportToSite">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#ActivityType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/lca#WF -->
+
+
+    <owl:Class rdf:about="https://w3id.org/lca#WF">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/lca#EnvironmentalIndicator"/>
+        <rdfs:comment>Water consumption (WF)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/at#Material -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/at#Material">
+        <rdf:type rdf:resource="https://w3id.org/lca#Material"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/lca#Julia_Kaltenegger -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/lca#Julia_Kaltenegger">
+        <rdfs:label>Julia Kaltenegger</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/lca#Martin_Röck -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/lca#Martin_Röck">
+        <rdfs:label>Martin Röck</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
